@@ -16,3 +16,4 @@ Pillow==6.2.0
 opencv-contrib-python-headless==4.2.0.34
 keras==2.3.1
 bz2file==0.98
+git-lfs==1.6
