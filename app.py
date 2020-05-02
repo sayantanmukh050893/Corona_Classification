@@ -10,9 +10,9 @@ import cv2
 from PIL import Image
 
 cwd = os.getcwd()
-output_model_path = os.path.join(cwd,"corona_model.pbz2")
-data = bz2.BZ2File(output_model_path, ‘rb’)
-model = pickle.load(data)
+output_model_path = os.path.join(cwd,"corona_model.pickle")
+#data = bz2.BZ2File(output_model_path, ‘rb’)
+model = pickle.load(open(output_model_path,"rb"))
 
 app = Flask(__name__)
 
@@ -67,4 +67,4 @@ def predict_front_end():
 
 
 if __name__ == "__main__":
-    app.run(port=6060,debug=True)
+    app.run(debug=True)
