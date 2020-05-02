@@ -10,7 +10,7 @@ import cv2
 from PIL import Image
 
 cwd = os.getcwd()
-output_model_path = os.path.join(cwd,"corona_model.pickle")
+output_model_path = os.path.join(cwd,"corona_model.pkl")
 #data = bz2.BZ2File(output_model_path, ‘rb’)
 model = pickle.load(open(output_model_path,"rb"))
 
