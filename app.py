@@ -10,7 +10,9 @@ import cv2
 from PIL import Image
 
 cwd = os.getcwd()
-output_model_path = os.path.join(cwd,"corona_model.pkl")
+output_model_path = os.path.join(cwd,"corona_model.pbz2")
+data = bz2.BZ2File(output_model_path, ‘rb’)
+model = pickle.load(data)
 
 app = Flask(__name__)
 
@@ -31,7 +33,7 @@ def predict_api():
     img = cv2.resize(img,(200,200))
     #img = cv2.cvtColor(np.array(img), cv2.COLOR_GRAY2RGB)
     img = img/255.0
-    model = pickle.load(open(output_model_path,"rb"))
+    #model = pickle.load(open(output_model_path,"rb"))
     img = np.array(img).reshape(-1,200,200,1)
     prediction = model.predict(img)
     predicted_val = [int(round(p[0])) for p in prediction]
@@ -51,7 +53,7 @@ def predict_front_end():
     img = cv2.resize(img,dsize=(200,200))
     #img = cv2.cvtColor(np.array(img), cv2.COLOR_BGR2GRAY)
     img = img/255.0
-    model = pickle.load(open(output_model_path,"rb"))
+    #model = pickle.load(open(output_model_path,"rb"))
     img = np.array(img).reshape(-1,200,200,1)
     prediction = model.predict(img)
     predicted_val = [int(round(p[0])) for p in prediction]
