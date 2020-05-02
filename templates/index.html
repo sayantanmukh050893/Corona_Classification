@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Lungs XRAY Classification</title>
+  </head>
+  <body>
+    <h1 align="center"Lungs XRAY Classification</h1>
+
+
+    <form align="center" action="{{ url_for('predict_front_end')}}" method="post" enctype="multipart/form-data">
+      <input type="file" id="myFile" name="filename">
+      <input type="submit">
+    </form>
+
+
+
+  </body>
+</html>
