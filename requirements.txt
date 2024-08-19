@@ -13,7 +13,7 @@ imbalanced-learn==0.6.2
 pickle5==0.0.9
 tensorflow
 Pillow==6.2.0
-opencv-contrib-python-headless==4.2.0.34
+opencv-contrib-python-headless
 keras==2.3.1
 bz2file==0.98
 git-lfs==1.6
