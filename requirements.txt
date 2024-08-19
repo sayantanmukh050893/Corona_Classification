@@ -10,7 +10,6 @@ scikit-learn
 matplotlib
 pandas
 imbalanced-learn
-pickle5
 tensorflow
 Pillow
 opencv-contrib-python-headless
